@@ -7,6 +7,13 @@
     course.category == 'ADVANCED' ? 'advanced' : ''
   ]"
 >
+  <!--Style DOM property: <div class="card__header" [style.text-decoration]="'underline'">-->
+  <!--Object: <div class="card__header" 
+       [ngStyle]="{'text-decoration': 'underline', 'color': 'red'}">-->
+  <!--<div
+    class="card__header"
+    [ngStyle]="cardClasses()"
+  >-->
   <div class="card__header">
     <h3 class="card__title">
       {{ cardIndex + ') ' + course.description }}
@@ -17,11 +24,14 @@
       <ng-template #noImage>
         <p>No image is available</p>
       </ng-template>
-      <img
+      <!--<img
         *ngIf="isImageVisible(); else noImage"
         [src]="course.iconUrl"
         [alt]="course.description"
-      />
+      />-->
+      <div *ngIf="isImageVisible(); else noImage" 
+           class="card__background-image" 
+           [ngStyle]="cardClasses()"></div>
     </div>
     <p class="card__description">
       {{ course.longDescription }}

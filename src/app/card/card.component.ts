@@ -22,4 +22,12 @@ export class CardComponent {
   isImageVisible() {
     return this.course && this.course.iconUrl;
   }
+
+  cardClasses() {
+    return {
+      //    'text-decoration': 'underline',
+      //    color: 'red',
+      'background-image': 'url(' + this.course.iconUrl + ')',
+    };
+  }
 }
