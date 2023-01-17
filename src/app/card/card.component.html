@@ -29,9 +29,11 @@
         [src]="course.iconUrl"
         [alt]="course.description"
       />-->
-      <div *ngIf="isImageVisible(); else noImage" 
-           class="card__background-image" 
-           [ngStyle]="cardClasses()"></div>
+      <div
+        *ngIf="isImageVisible(); else noImage"
+        class="card__background-image"
+        [ngStyle]="cardClasses()"
+      ></div>
     </div>
     <p class="card__description">
       {{ course.longDescription }}
