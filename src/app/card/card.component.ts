@@ -32,6 +32,7 @@ export class CardComponent {
   imageClasses() {
     return {
       'background-image': 'url(' + this.course.iconUrl + ')',
+      'background-position': 'center',
     };
   }
 }
