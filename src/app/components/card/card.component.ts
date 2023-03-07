@@ -26,9 +26,10 @@ export class CardComponent {
   //cardClasses() {
   //  return {
   //    'text-decoration': 'underline',
-  //    color: 'red',
+  //    'color': 'red',
   //  };
   //}
+  
   imageClasses() {
     return {
       'background-image': 'url(' + this.course.iconUrl + ')',
