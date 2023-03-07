@@ -22,6 +22,7 @@
         [src]="course.iconUrl"
         [alt]="course.title"
       />-->
+      <!-- Data dependent content  -->
       <div
         *ngIf="isImageVisible(); else noImage"
         class="card__background-image"
