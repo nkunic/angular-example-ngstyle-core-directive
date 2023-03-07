@@ -2,21 +2,17 @@
   *ngIf="course"
   class="card"
   [ngClass]="[
-    course.category == 'BEGINNER' ? 'beginner' : '',
-    course.category == 'INTERMEDIATE' ? 'intermediate' : '',
-    course.category == 'ADVANCED' ? 'advanced' : ''
+    course.category == 'BEGINNER' ? 'card--beginner' : '',
+    course.category == 'INTERMEDIATE' ? 'card--intermediate' : '',
+    course.category == 'ADVANCED' ? 'card--advanced' : ''
   ]"
 >
-  <!--Style DOM property: <div class="card__header" [style.text-decoration]="'underline'">-->
-  <!--Object: <div class="card__header" 
-       [ngStyle]="{'text-decoration': 'underline', 'color': 'red'}">-->
-  <!--<div
-    class="card__header"
-    [ngStyle]="cardClasses()"
-  >-->
+  <!-- DOM property style: [style.text-decoration]="'underline'"                        -->
+  <!-- Object:             [ngStyle]="{'text-decoration': 'underline', 'color': 'red'}" -->
+  <!-- Function            [ngStyle]="cardClasses()"                                    -->
   <div class="card__header">
     <h3 class="card__title">
-      {{ cardIndex + ') ' + course.description }}
+      {{ cardIndex + ') ' + course.title }}
     </h3>
   </div>
   <div class="card__content">
@@ -27,7 +23,7 @@
       <!--<img
         *ngIf="isImageVisible(); else noImage"
         [src]="course.iconUrl"
-        [alt]="course.description"
+        [alt]="course.title"
       />-->
       <div
         *ngIf="isImageVisible(); else noImage"
@@ -36,7 +32,7 @@
       ></div>
     </div>
     <p class="card__description">
-      {{ course.longDescription }}
+      {{ course.description }}
     </p>
   </div>
   <div class="card__footer">
